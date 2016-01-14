@@ -22,5 +22,3 @@ Queue.prototype.dequeue = function(){
 Queue.prototype.size = function(){
   return (this.back - this.front < 0) ? 0 : this.back - this.front;
 };
-
-var myQueue = new Queue();
