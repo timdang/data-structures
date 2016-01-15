@@ -25,12 +25,13 @@ treeMethods.contains = function(target) {
     return true;
     //return true
   } else if (this.children !== null) {
-     for (var i = 0; i < this.children.length; i++) {
-      if (this.children[i].contains(target)){
+    for (var i = 0; i < this.children.length; i++) {
+      if (this.children[i].contains(target)) {
         return true;
       }
-    } 
-  } return false;
+    }
+  }
+  return false;
 };
 
 
