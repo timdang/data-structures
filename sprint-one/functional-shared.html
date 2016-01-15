@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Functional-Shared Testing</title>
+</head>
+<body>
+    <script src="src/functional-shared/stack.js"></script>
+    <script src="src/functional-shared/queue.js"></script>
+    <script src="../lib/underscore/underscore.js"></script>
+    <script type="text/javascript">
+        var arrayOfStacks = [];
+      //For Stacks
+        for (var i = 0; i < 100000; i++) {
+          //create some instances
+            arrayOfStacks[i] = Stack();
+
+             //add items to stack
+            for (var j = 0; j<100; j++){
+              arrayOfStacks[i].push(j);
+            }
+            //remove item from stack
+            for (var j = 0; j<100; j++){
+              arrayOfStacks[i].pop();
+            }
+        };
+      //For Queues
+      var arrayOfQueues = [];
+        for (var i = 0; i < 100000; i++) {
+            arrayOfQueues[i] = Queue();
+
+             //add items to queue
+            for (var j = 0; j<100; j++){
+              arrayOfQueues[i].enqueue(j);
+            }
+            //remove item from queue
+            for (var j = 0; j<100; j++){
+              arrayOfQueues[i].dequeue();
+            }
+        };
+    </script>
+</body>
+</html>
+

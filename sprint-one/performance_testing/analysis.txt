@@ -1,0 +1,21 @@
+We created a test that created 10000 instances of stack and queue each. We then performed 100 calls to add and then remove entries to each instance. This was our consistent test for the four different instantiation styles.
+
+Functional total call time: 3597.9 ms
+
+
+In the functional profile, we found the majority of processing time was dedicated to the pop (23.57%) and dequeue (21.09%) methods, after those, garbage collector with 15.51%.  The push (8.09%) and enqueue (5.53%) methods took significantly less processing time than their deletion counterparts.  
+Stack instatiation (3.56%)
+Queue instantiation (1.7%)
+
+Functional-shared total call time: 3221.4 ms
+
+In the functional-shared profile the total call time was roughly equivalent to the total call time for the functional pattern, however, unlike the functional pattern the majority of processing time went towards the call to instantiate underscore.  Processing time percentage for all methods (pop, push, dequeue and enqueue) all dropped below 0.1%.
+
+Prototypal total call time: 2942.4 ms
+
+For prototypal pattern, the total call time dropped slighlty.  The majority of processing time went towards the anonymous function which called the Stack and Queue instantiations. garbage collection was the next heaviest process at 12.87%. Processing time percentage for all methods (pop, push, dequeue and enqueue) all dropped below 0.1%.
+
+
+Pseudoclassical total call time: 2830.7 ms
+
+For the pseudoclassical pattern the majority of processing time went towards the anonymous function which called the Stack and Queue instantiations. garbage collection was the next heaviest process at 13.45%. Processing time percentage for all methods (pop, push, dequeue and enqueue) all dropped below 0.1%.

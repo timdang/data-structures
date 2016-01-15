@@ -23,3 +23,5 @@ Stack.prototype.push = function(value){
 Stack.prototype.size = function(){
   return this.count;
 };
+
+var stackInstance = new Stack();
